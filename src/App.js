@@ -23,7 +23,21 @@ class App extends Component {
   }
 
   changeColor = () => {
-    this.setState({counter:this.state.counter + 1})
+    let { counter: newCounter, color } = this.state
+
+
+    //if index > array.length, loop back to index 0
+    if(newCounter < color.length - 1){
+      //newCounter = 0
+      //this.setState({counter:newCounter})
+
+      this.setState({counter: ++newCounter})
+
+    } else {
+        newCounter = 0
+        this.setState({counter:newCounter})
+        //this.setState({counter:newCounter++})
+    }
   }
 }
 
